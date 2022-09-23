@@ -1,4 +1,16 @@
 # go-wrk 0.1
+go-wrk [flags] url
+go-wrk -t=8 -c=100 -n=10000 "http://127.0.0.1:8080/api/book"
+
+-H="User-Agent: go-wrk 0.1 bechmark\nContent-Type: text/html;": 由'\n'分隔的请求头
+-c=100: 使用的最大连接数
+-k=true: 是否禁用keep-alives
+-i=false: if TLS security checks are disabled
+-m="GET": HTTP请求方法
+-n=1000: 请求总数
+-t=1: 使用的线程数
+-b="" HTTP请求体
+-s="" 如果指定，它将计算响应中包含搜索到的字符串s的频率
 
 this is a small http benchmark utility similar to https://github.com/wg/wrk but written in go.
 it has a couple of features absent from wrk
